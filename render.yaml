@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: Car-park-Assistant
+    env: python
+    region: singapore  
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    autoDeploy: true
+
