@@ -34,7 +34,7 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Setup Flutter
+      - name: Setup Flutter SDK 3.32.2
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.32.2'
@@ -53,7 +53,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: web-build-artifact
-          path: ./build  # Make sure this is your actual build output folder
+          path: ./build
 
   deploy:
     needs: build
@@ -64,6 +64,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Setup Pages
         uses: actions/configure-pages@v5
