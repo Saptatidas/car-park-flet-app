@@ -54,9 +54,10 @@ jobs:
 
       - name: Install Flutter SDK
         run: |
-          choco install flutter --version=3.10.0 -y
-          echo "PATH=${env:PATH};C:\src\flutter\bin" >> $GITHUB_ENV
+          choco install flutter --version=3.32.2 -y
+          echo "C:\\src\\flutter\\bin" >> $GITHUB_PATH
         shell: pwsh
+
 
       - name: Install flet-cli
         run: |
