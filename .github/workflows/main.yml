@@ -39,6 +39,10 @@ jobs:
         with:
           flutter-version: '3.32.2'
 
+      - name: Add Dart to PATH
+        run: echo "${{ env.FLUTTER_ROOT }}\\bin\\cache\\dart-sdk\\bin" >> $GITHUB_PATH
+        shell: pwsh
+
       - name: Install flet-cli
         run: |
           python -m pip install --upgrade pip
